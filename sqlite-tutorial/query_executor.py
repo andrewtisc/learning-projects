@@ -11,6 +11,9 @@ import sqlite3
 # INSERT_ITEM_QUERY = "INSERT INTO items (name, quantity) VALUES (?, ?);"
 # SELECT_ALL_ITEMS_QUERY = "SELECT * FROM items;"
 
+# Get name of .sql file to run
+file_name_in = input("Enter the name of the .sql file to run: ")
+
 # Connect to SQLite database
 conn = sqlite3.connect('db/chinook.db')
 cursor = conn.cursor()
@@ -36,5 +39,5 @@ def printCursorResults():
     for l in lines:
         print(l)
 
-execQueriesFromFile('ere_tracks.sql')
+execQueriesFromFile(file_name_in)
 conn.close()
